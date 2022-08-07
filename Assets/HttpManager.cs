@@ -2,12 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class HttpManager : MonoBehaviour
 {
 
     [SerializeField]
     private string URL;
+
+    public GameObject scorePanel;
+
+    public Text[] nameText;
+    public Text[] scoreText;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,11 +42,18 @@ public class HttpManager : MonoBehaviour
         else if(www.responseCode == 200){
             //Debug.Log(www.downloadHandler.text);
             Scores resData = JsonUtility.FromJson<Scores>(www.downloadHandler.text);
+            scorePanel.SetActive(true);
 
             foreach (ScoreData score in resData.scores)
             {
                 Debug.Log(score.userId +" | "+score.value);
+                nameText[score.userId - 1].text = score.userId.ToString();
             }
+            for (int i = 0; i < resData.scores.Length; i++)
+            {
+                scoreText[i].text = resData.scores[i].value.ToString();
+            }
+        
         }
         else
         {
