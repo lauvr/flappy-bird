@@ -30,7 +30,7 @@ public class HttpManager : MonoBehaviour
 
     IEnumerator GetScores()
     {
-        string url = URL + "/leaders";
+        string url = URL + "/scores";
         UnityWebRequest www = UnityWebRequest.Get(url);
 
         yield return www.SendWebRequest();
@@ -46,14 +46,15 @@ public class HttpManager : MonoBehaviour
 
             foreach (ScoreData score in resData.scores)
             {
-                Debug.Log(score.userId +" | "+score.value);
-                nameText[score.userId - 1].text = score.userId.ToString();
+                Debug.Log(score.user_id + " | " + score.score);
+                //NameText[score.user_id - 1].text = score.user_id.ToString();
             }
             for (int i = 0; i < resData.scores.Length; i++)
             {
-                scoreText[i].text = resData.scores[i].value.ToString();
+                scoreText[i].text = resData.scores[i].score.ToString();
+                nameText[i].text = resData.scores[i].user_id.ToString();
             }
-        
+
         }
         else
         {
@@ -67,8 +68,8 @@ public class HttpManager : MonoBehaviour
 [System.Serializable]
 public class ScoreData
 {
-    public int userId;
-    public int value;
+    public string user_id;
+    public int score;
 
 }
 
