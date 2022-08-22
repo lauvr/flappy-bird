@@ -215,6 +215,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4c3785dafaecb41beb56bfe5ad5fbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  URL: https://unitywebrequest-restapi.herokuapp.com
+  NameText:
+  - {fileID: 1066283370}
+  - {fileID: 595678535}
+  - {fileID: 1233780566}
+  - {fileID: 1345375779}
+  - {fileID: 148983305}
+  ScoreText:
+  - {fileID: 277942560}
+  - {fileID: 1230789474}
+  - {fileID: 1424935372}
+  - {fileID: 1883715329}
+  - {fileID: 552260698}
+  ScorePanel: {fileID: 1916134952}
 --- !u!1 &148983303
 GameObject:
   m_ObjectHideFlags: 0
@@ -1172,8 +1186,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1521267448}
-        m_TargetAssemblyTypeName: HttpManager, Assembly-CSharp
+      - m_Target: {fileID: 113116209}
+        m_TargetAssemblyTypeName: Score, Assembly-CSharp
         m_MethodName: ClickGetScores
         m_Mode: 1
         m_Arguments:
@@ -1883,7 +1897,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1521267447}
   - component: {fileID: 1521267446}
-  - component: {fileID: 1521267448}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1918,32 +1931,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1521267448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1521267445}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e968c4b65d0088c44ae8df8de507ed5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  URL: https://my-json-server.typicode.com/lauvr/APIFalsa
-  scorePanel: {fileID: 1916134952}
-  nameText:
-  - {fileID: 1066283370}
-  - {fileID: 595678535}
-  - {fileID: 1233780566}
-  - {fileID: 1345375779}
-  - {fileID: 148983305}
-  scoreText:
-  - {fileID: 277942560}
-  - {fileID: 1230789474}
-  - {fileID: 1424935372}
-  - {fileID: 1883715329}
-  - {fileID: 552260698}
 --- !u!1 &1651017538
 GameObject:
   m_ObjectHideFlags: 0
